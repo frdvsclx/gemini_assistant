@@ -1,22 +1,15 @@
 import os
 import requests #http istekleri icin
-from dotenv import load_dotenv #.env dosyasindan ortam varb yuklemek icin
 
-load_dotenv() #.env 
+# API key'i doğrudan tanımla
+api_key = "api_key"
 
-#.env dosyasindan api key al
-api_key = os.getenv("GEMINI_API_KEY")
-
-#api key yoksa hata ver
-if not api_key:
-    raise ValueError("GEMINI_API_KEY not found in .env file")
-
-url ="https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
+url ="https://genyerativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
 
 headers = {"Content-Type": "application/json",  #json formatinda gonder
            "X-Google-API-Key": api_key } #yetkilndirme icin 
 
-def get_gemini_response(promt: str) -> str: #ggemini ana fonksiyon
+def get_gemini_response(promt: str) -> str: #gemini ana fonksiyon
     payload = {
         "contents": [
             { "parts": 
