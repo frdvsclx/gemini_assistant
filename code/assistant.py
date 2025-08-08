@@ -2,9 +2,9 @@ import os
 import requests #http istekleri icin
 
 # API key'i doğrudan tanımla
-api_key = "api_key"
+api_key = ""
 
-url ="https://genyerativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
+url ="https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
 
 headers = {"Content-Type": "application/json",  #json formatinda gonder
            "X-Google-API-Key": api_key } #yetkilndirme icin 
